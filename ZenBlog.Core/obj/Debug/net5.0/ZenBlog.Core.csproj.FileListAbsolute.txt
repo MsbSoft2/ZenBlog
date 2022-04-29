@@ -1,0 +1,15 @@
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ZenBlog.Core.deps.json
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ZenBlog.Core.dll
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ref\ZenBlog.Core.dll
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ZenBlog.Core.pdb
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ZenBlog.DataLayer.dll
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\bin\Debug\net5.0\ZenBlog.DataLayer.pdb
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.csproj.AssemblyReference.cache
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.AssemblyInfoInputs.cache
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.AssemblyInfo.cs
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.csproj.CoreCompileInputs.cache
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.csproj.CopyComplete
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.dll
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ref\ZenBlog.Core.dll
+C:\Users\SADRA\Desktop\ZenBlog\ZenBlog.Core\obj\Debug\net5.0\ZenBlog.Core.pdb

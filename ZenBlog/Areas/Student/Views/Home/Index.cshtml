@@ -1,0 +1,78 @@
+﻿@model ShowCountViewModel
+@{
+    ViewData["Title"] = "داشبورد";
+}
+
+<h1>داشبورد</h1>
+
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-12">
+        <div class="card gradient-orange-amber">
+            <div class="card-body">
+                <div class="px-3 py-3">
+                    <div class="media">
+                        <div class="align-center">
+                            <i class="icon-user text-white font-large-2 float-left"></i>
+                        </div>
+                        <div class="media-body text-white text-right mx-3">
+                            <h3 class="text-white">@Model.UserCount</h3>
+                            <span>تعداد کل کاربران</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-12">
+        <div class="card gradient-light-blue-cyan">
+            <div class="card-body">
+                <div class="px-3 py-3">
+                    <div class="media">
+                        <div class="align-center">
+                            <i class="icon-pencil text-white font-large-2 float-left"></i>
+                        </div>
+                        <div class="media-body text-white text-right mx-3">
+                            <h3 class="text-white">@Model.PostCount</h3>
+                            <span>تعداد کل پست ها</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-12">
+        <div class="card gradient-mint">
+            <div class="card-body">
+                <div class="px-3 py-3">
+                    <div class="media">
+                        <div class="align-center">
+                            <i class="icon-graph text-white font-large-2 float-left"></i>
+                        </div>
+                        <div class="media-body text-white text-right mx-3">
+                            <h3 class="text-white">@Model.CategoryCount</h3>
+                            <span>تعداد کل گروه ها</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-12">
+        <div class="card gradient-red-pink">
+            <div class="card-body">
+                <div class="px-3 py-3">
+                    <div class="media">
+                        <div class="align-center">
+                            <i class="icon-speech text-white font-large-2 float-left"></i>
+                        </div>
+                        <div class="media-body text-white text-right mx-3">
+                            <h3 class="text-white">@Model.CommentCount</h3>
+                            <span>تعداد کل نظرات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,80 @@
+﻿@model ZenBlog.DataLayer.Models.Setting
+
+@{
+    ViewData["Title"] = "تنظیمات";
+}
+
+<h1>تنظیمات</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Setting">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="AboutUs" class="control-label"></label>
+                <textarea asp-for="AboutUs" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="AboutUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phones" class="control-label"></label>
+                <input asp-for="Phones" class="form-control" />
+                <span asp-validation-for="Phones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>*@
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" value="ذخیره" class="btn btn-success w-50" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">برگشت</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#AboutUs'), {
+
+                licenseKey: '',
+
+
+
+            })
+            .then(editor => {
+                window.editor = editor;
+
+
+
+
+            })
+            .catch(error => {
+                console.error('Oops, something went wrong!');
+                console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+                console.warn('Build id: rf7zet6ke5d1-unt8fr6ckh47');
+                console.error(error);
+            });
+        CKEDITOR.replace('Description');
+    </script>
+}

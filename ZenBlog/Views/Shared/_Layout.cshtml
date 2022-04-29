@@ -1,0 +1,135 @@
+﻿@using ZenBlog.Components
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@ViewData["Title"] - ZenBlog</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <partial name="_Styles" />
+
+</head>
+
+<body>
+
+    @await Component.InvokeAsync("Header")
+
+    @RenderBody()
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-content">
+            <div class="container">
+
+                <div class="row g-5">
+                    <div class="col-lg-4">
+                        <h3 class="footer-heading">درباره ZenBlog</h3>
+                        <p class="text-white">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        </p>
+                        <p><a asp-controller="Home" asp-action="AboutUs" class="footer-link-more">Learn More</a></p>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <h3 class="footer-heading">Navigation</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li><a asp-controller="Home" asp-action="Index"><i class="bi bi-chevron-right"></i> صفحه اصلی</a></li>
+                            <li><a asp-controller="Home" asp-action="AboutUs"><i class="bi bi-chevron-right"></i>درباره ما</a></li>
+                            <li><a asp-controller="Home" asp-action="ContactUs"><i class="bi bi-chevron-right"></i> تماس با ما</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <h3 class="footer-heading">پست های اخیر</h3>
+
+                        <ul class="footer-links footer-blog-entry list-unstyled">
+                            <li>
+                                <a href="/" class="d-flex align-items-center">
+                                    <img src="/Blog Template/assets/img/post-sq-1.jpg" alt="" class="img-fluid me-3">
+                                    <div class="mx-3">
+                                        <div class="post-meta d-block text-white"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span class="text-white">5 Great Startup Tips for Female Founders</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/" class="d-flex align-items-center">
+                                    <img src="/Blog Template/assets/img/post-sq-2.jpg" alt="" class="img-fluid me-3">
+                                    <div class="mx-3">
+                                        <div class="post-meta d-block text-white"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span class="text-white">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/" class="d-flex align-items-center">
+                                    <img src="/Blog Template/assets/img/post-sq-3.jpg" alt="" class="img-fluid me-3">
+                                    <div class="mx-3">
+                                        <div class="post-meta d-block text-white"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span class="text-white">Life Insurance And Pregnancy: A Working Mom’s Guide</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/" class="d-flex align-items-center">
+                                    <img src="/Blog Template/assets/img/post-sq-4.jpg" alt="" class="img-fluid me-3">
+                                    <div class="mx-3">
+                                        <div class="post-meta d-block text-white"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span class="text-white">How to Avoid Distraction and Stay Focused During Video Calls?</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <div class="copyright text-white">
+                            © Copyright ZenBlog. All Rights Reserved
+                        </div>
+
+                        <div class="credits text-white">
+                            Designed by <a href="#">SADRA</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+                            <a href="#" class="twitter"><i class="bi bi-twitter text-white"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook text-white"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram text-white"></i></a>
+                            <a href="#" class="google-plus"><i class="bi bi-skype text-white"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin text-white"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <partial name="_Scripts" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

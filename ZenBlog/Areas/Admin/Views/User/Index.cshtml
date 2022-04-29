@@ -1,0 +1,78 @@
+﻿@model GetAllUserViewModel
+
+@{
+    ViewData["Title"] = "کاربران";
+}
+
+<h1>کاربران</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">افزودن کاربر</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                تصویر
+            </th>
+            <th>
+                نام کامل
+            </th>
+            <th>
+                موبایل
+            </th>
+            <th>
+                ایمیل
+            </th>
+            <th>
+                نقش
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Image" class="img-thumbnail" width="120" alt="@item.FullName" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @switch (item.Role)
+                    {
+                        case UserRole.admin:
+                            <span class="badge badge-amber text-white">مدیر</span>
+                            break;
+                        case UserRole.teacher:
+                            <span class="badge badge-success text-white">استاد</span>
+                            break;
+                        case UserRole.student:
+                            <span class="badge badge-info text-white">دانشجو</span>
+                            break;
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">ویرایش</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        @for (int i = 0; i < Model.PageCount; i++)
+        {
+            <li class="page-item @((int)ViewData["pageNumber"]==i?"active":"")"><a class="page-link" href="#">@(i+1)</a></li>
+        }
+    </ul>
+</nav>

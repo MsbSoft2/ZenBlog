@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ZenBlog.DataLayer.Models.Category>
+
+@{
+    ViewData["Title"] = "گروه ها";
+}
+
+<h1>گروه ها</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">افزودن گروه</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,220 @@
+﻿@model IEnumerable<Category>
+<!-- ======= Culture Category Section ======= -->
+@foreach (var category in Model)
+{
+    @if (category.Posts.Count() > 0)
+    {
+        <section class="category-section">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header d-flex justify-content-between align-items-center mb-5">
+                    <h2>@category.Title</h2>
+                    <div>
+                        <a asp-controller="Category"
+                           asp-action="ShowCategory"
+                           asp-route-categoryId="@category.Id"
+                           asp-route-categoryTitle="@category.Title"
+                           class="more">نمایش همه</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-9">
+
+                        @if (category.Posts.Count() >= 1)
+                        {
+                            <div class="d-lg-flex post-entry-2">
+                                <a asp-controller="Post"
+                                   asp-action="Post"
+                                   asp-route-postId="@category.Posts[0].Id"
+                                   asp-route-postTitle="@category.Posts[0].Title"
+                                   asp-route-categoryTitle="@category.Title"
+                                   class="ms-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                                    <img src="@category.Posts[0].Image" alt="@category.Posts[0].Title" class="img-fluid">
+                                </a>
+                                <div>
+                                    <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                    <h3>
+                                        <a asp-controller="Post"
+                                           asp-action="Post"
+                                           asp-route-postId="@category.Posts[0].Id"
+                                           asp-route-postTitle="@category.Posts[0].Title"
+                                           asp-route-categoryTitle="@category.Title">
+                                            @category.Posts[0].Title
+                                        </a>
+                                    </h3>
+                                    <p class="mx-2">
+                                        @category.Posts[0].ShortDescription
+                                    </p>
+                                    <div class="d-flex align-items-center author">
+                                        <div class="photo"><img src="@category.Posts[0].User.Image" alt="@category.Posts[0].User.FullName" class="img-fluid"></div>
+                                        <div class="name">
+                                            <h3 class="m-0 p-0">@category.Posts[0].User.FullName</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="row">
+                            <div class="col-lg-4">
+                                @if (category.Posts.Count() >= 3)
+                                {
+                                    <div class="post-entry-1 border-bottom">
+                                        <a asp-controller="Post"
+                                           asp-action="Post"
+                                           asp-route-postId="@category.Posts[2].Id"
+                                           asp-route-postTitle="@category.Posts[2].Title"
+                                           asp-route-categoryTitle="@category.Title"><img src="@category.Posts[2].Image" alt="@category.Posts[2].Title" class="img-fluid"></a>
+                                        <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                        <h2 class="mb-2"><a asp-controller="Post"
+                                                            asp-action="Post"
+                                                            asp-route-postId="@category.Posts[2].Id"
+                                                            asp-route-postTitle="@category.Posts[2].Title"
+                                                            asp-route-categoryTitle="@category.Title">@category.Posts[2].Title</a></h2>
+                                        <span class="author mb-3 d-block">@category.Posts[2].User.FullName</span>
+                                        <p class="mb-4 d-block mx-2">
+                                            @category.Posts[2].ShortDescription
+                                        </p>
+                                    </div>
+                                }
+                                @if (category.Posts.Count() >= 4)
+                                {
+                            <div class="post-entry-1">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[3].Id"
+                                       asp-route-postTitle="@category.Posts[3].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[3].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[3].User.FullName</span>
+                            </div>
+                                }
+                            </div>
+                            @if (category.Posts.Count() >= 2)
+                            {
+
+                                <div class="col-lg-8">
+                                    <div class="post-entry-1">
+                                        <a asp-controller="Post"
+                                           asp-action="Post"
+                                           asp-route-postId="@category.Posts[1].Id"
+                                           asp-route-postTitle="@category.Posts[1].Title"
+                                           asp-route-categoryTitle="@category.Title"><img src="@category.Posts[1].Image" alt="@category.Posts[1].Title" class="img-fluid"></a>
+                                        <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                        <h2 class="mb-2">
+                                            <a asp-controller="Post"
+                                               asp-action="Post"
+                                               asp-route-postId="@category.Posts[1].Id"
+                                               asp-route-postTitle="@category.Posts[1].Title"
+                                               asp-route-categoryTitle="@category.Title">@category.Posts[1].Title</a>
+                                        </h2>
+                                        <span class="author mb-3 d-block">@category.Posts[1].User.FullName</span>
+                                        <p class="mb-4 d-block mx-2">@category.Posts[1].ShortDescription</p>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        @if (category.Posts.Count() >= 5)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[4].Id"
+                                       asp-route-postTitle="@category.Posts[4].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[4].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[4].User.FullName</span>
+                            </div>
+
+                        }
+                        @if (category.Posts.Count() >= 6)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[5].Id"
+                                       asp-route-postTitle="@category.Posts[5].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[5].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[5].User.FullName</span>
+                            </div>
+
+                        }
+                        @if (category.Posts.Count() >= 7)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[6].Id"
+                                       asp-route-postTitle="@category.Posts[6].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[6].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[6].User.FullName</span>
+                            </div>
+
+                        }
+                        @if (category.Posts.Count() >= 8)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[7].Id"
+                                       asp-route-postTitle="@category.Posts[7].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[7].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[7].User.FullName</span>
+                            </div>
+
+                        }
+                        @if (category.Posts.Count() >= 9)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[8].Id"
+                                       asp-route-postTitle="@category.Posts[8].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[8].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[8].User.FullName</span>
+                            </div>
+
+                        }
+                        @if (category.Posts.Count() >= 10)
+                        {
+                            <div class="post-entry-1 border-bottom">
+                                <div class="post-meta"><span class="date">@category.Title</span> <span class="mx-1">&bullet;</span> <span></span></div>
+                                <h2 class="mb-2">
+                                    <a asp-controller="Post"
+                                       asp-action="Post"
+                                       asp-route-postId="@category.Posts[9].Id"
+                                       asp-route-postTitle="@category.Posts[9].Title"
+                                       asp-route-categoryTitle="@category.Title">@category.Posts[9].Title</a>
+                                </h2>
+                                <span class="author mb-3 d-block">@category.Posts[9].User.FullName</span>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End @category.Title Category Section -->
+    }
+
+}

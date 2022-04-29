@@ -1,0 +1,84 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "درباره ما";
+}
+
+
+<main id="main">
+    <section>
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h1 class="page-title">درباره ما</h1>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+
+                <div class="d-md-flex post-entry-2 half">
+                    <a href="#" class="me-4 thumbnail">
+                        <img src="/Blog Template/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
+                    </a>
+                    <div class="pe-md-5 mt-4 mt-md-0">
+                        <div class="post-meta mt-4">درباره</div>
+                        <h2 class="mb-4 display-4">ZenBlog</h2>
+                        <p>
+                            @Html.Raw(Model.AboutUs)
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row gy-4">
+
+                <div class="col-md-4">
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>آدرس</h3>
+                        <address>@Model.Address</address>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-4">
+                    <div class="info-item info-item-borders">
+                        <i class="bi bi-phone"></i>
+                        <h3>تلفن</h3>
+                        <p><a href="tel:@Model.Phones">@Model.Phones</a></p>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-4">
+                    <div class="info-item">
+                        <i class="bi bi-envelope"></i>
+                        <h3>ایمیل</h3>
+                        <p><a href="mailto:@(Model.Email)">@Model.Email</a></p>
+                    </div>
+                </div><!-- End Info Item -->
+
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <h2 class="display-4">تیم توسعه دهنده</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-5">
+                    <img src="/Blog Template/assets/img/69380758.png" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                    <h4>محمد صدرا برومند</h4>
+                    <span class="d-block mb-3 text-uppercase">سازنده</span>
+                    <p>FullStack Developer</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
